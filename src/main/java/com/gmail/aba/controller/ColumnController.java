@@ -35,17 +35,17 @@ public class ColumnController {
         return columnService.getColumnById(id);
     }
 
-    @PutMapping("/update/name/{id}")
-    public String updateColumnByName(@RequestBody ColumnData column, @PathVariable int id) {
-        return columnService.updateColumnByName(column, id);
+    @PutMapping("/update/{id}")
+    public String updateColumn(@RequestBody ColumnData column, @PathVariable int id) {
+        return columnService.updateColumnName(column, id);
     }
 
     @PutMapping("/update/order/{id}")
-    public String updateColumnByOrder(@RequestBody ColumnData column, @PathVariable int id) {
-        return columnService.updateColumnByOrder(column, id);
+    public String updateColumnOrder(@RequestBody ColumnData column, @PathVariable int id) {
+        return columnService.updateColumnOrder(column, id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public String deleteColumnById(@PathVariable int id) {
         columnService.deleteColumnById(id);
 

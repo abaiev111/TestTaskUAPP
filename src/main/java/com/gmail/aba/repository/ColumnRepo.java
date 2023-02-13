@@ -7,8 +7,8 @@ import java.util.List;
 public interface ColumnRepo {
     int save(ColumnData column);
     ColumnDetailsDTO findById(int id);
-    int updateColumnByName(ColumnData column, int id);
-    int updateColumnByOrder(ColumnData column, int id);
+    int updateColumnName(ColumnData column, int id);
+    int updateColumnOrder(ColumnData column, int id);
     int deleteColumnById(int id);
     List<ColumnDetailsDTO> findAll();
 

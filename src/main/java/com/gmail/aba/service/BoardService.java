@@ -1,7 +1,7 @@
 package com.gmail.aba.service;
 
 import com.gmail.aba.data.BoardData;
-import com.gmail.aba.repository.BoardRepoImpl;
+import com.gmail.aba.repository.impl.BoardRepoImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BoardService {
 
-    BoardRepoImpl boardRepo;
+    private BoardRepoImpl boardRepo;
 
     public int createBoard(BoardData boardData) {
         return boardRepo.save(boardData);

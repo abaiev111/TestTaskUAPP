@@ -45,16 +45,16 @@ public class TaskController {
     }
 
     @PutMapping("/update/order/{id}")
-    public String updateTaskByOrder(@RequestBody TaskUpdateOrderDTO task, @PathVariable int id) {
-        return taskService.updateTaskByOrder(task, id);
+    public String updateTaskOrder(@RequestBody TaskUpdateOrderDTO task, @PathVariable int id) {
+        return taskService.updateTaskOrder(task, id);
     }
 
     @PutMapping("/update/column/{id}")
-    public String updateTaskByColumn(@RequestBody TaskUpdateColumnDTO task, @PathVariable int id) {
-        return taskService.updateTaskByColumn(task, id);
+    public String updateTaskColumn(@RequestBody TaskUpdateColumnDTO task, @PathVariable int id) {
+        return taskService.updateTaskColumn(task, id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public String deleteTaskById(@PathVariable int id) {
         taskService.deleteTaskById(id);
 

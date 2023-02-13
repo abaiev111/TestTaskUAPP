@@ -1,7 +1,8 @@
-package com.gmail.aba.repository;
+package com.gmail.aba.repository.impl;
 
 import com.gmail.aba.data.ColumnData;
 import com.gmail.aba.dto.ColumnDetailsDTO;
+import com.gmail.aba.repository.ColumnRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -14,7 +15,7 @@ import java.util.List;
 @Repository
 public class ColumnRepoImpl implements ColumnRepo {
 
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public int save(ColumnData column) {
@@ -36,13 +37,13 @@ public class ColumnRepoImpl implements ColumnRepo {
     }
 
     @Override
-    public int updateColumnByName(ColumnData column, int id) {
+    public int updateColumnName(ColumnData column, int id) {
         return jdbcTemplate.update("UPDATE column1 SET column_name = ? WHERE column_id = ?",
                 new Object[] {column.getColumnName(), id});
     }
 
     @Override
-    public int updateColumnByOrder(ColumnData column, int id) {
+    public int updateColumnOrder(ColumnData column, int id) {
         return jdbcTemplate.update("UPDATE column1 SET column_order = ? WHERE column_id = ?",
                 new Object[] {column.getColumnOrder(), id});
     }

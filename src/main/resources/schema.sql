@@ -34,7 +34,7 @@ CREATE TABLE task (
 --
 -- 2.отримати колонку по id: GET /api/column/1
 --
--- 3 оновити колонку: PUT /api/column/update/name/1
+-- 3 оновити колонку: PUT /api/column/update/1
 -- {
 --     "columnName" : "columnNameUpdated4"
 -- }
@@ -44,7 +44,7 @@ CREATE TABLE task (
 --     "columnOrder" : 2
 -- }
 --
--- 5 видалити колонку по id DELETE /api/column/delete/1
+-- 5 видалити колонку по id DELETE /api/column/1
 --
 -- 6 отримати всi колонки: GET /api/column/getAll
 --
@@ -71,7 +71,7 @@ CREATE TABLE task (
 --
 -- 11 оновити задачу в колонцi по id: PUT /api/task/update/column/1
 --
--- 12 видалити задачу по id: DELETE /api/task/delete/1
+-- 12 видалити задачу по id: DELETE /api/task/1
 --
 -- 13 отримати всi задачi: GET /api/task/getAll
 

@@ -5,7 +5,7 @@ import com.gmail.aba.dto.TaskDetailsDTO;
 import com.gmail.aba.dto.TaskUpdateColumnDTO;
 import com.gmail.aba.dto.TaskUpdateDTO;
 import com.gmail.aba.dto.TaskUpdateOrderDTO;
-import com.gmail.aba.repository.TaskRepoImpl;
+import com.gmail.aba.repository.impl.TaskRepoImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class TaskService {
 
-    TaskRepoImpl taskRepo;
+    private TaskRepoImpl taskRepo;
 
     public int createTask(TaskData task) {
         return taskRepo.save(task);
@@ -31,13 +31,13 @@ public class TaskService {
         return "task updated";
     }
 
-    public String updateTaskByOrder(TaskUpdateOrderDTO task, int id) {
-        taskRepo.updateTaskByOrder(task, id);
+    public String updateTaskOrder(TaskUpdateOrderDTO task, int id) {
+        taskRepo.updateTaskOrder(task, id);
         return "task order updated";
     }
 
-    public String updateTaskByColumn(TaskUpdateColumnDTO task, int id) {
-        taskRepo.updateTaskByColumn(task, id);
+    public String updateTaskColumn(TaskUpdateColumnDTO task, int id) {
+        taskRepo.updateTaskColumn(task, id);
         return "task column updated";
     }
 

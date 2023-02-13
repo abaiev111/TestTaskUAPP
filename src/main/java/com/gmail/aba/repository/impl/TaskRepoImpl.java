@@ -1,4 +1,4 @@
-package com.gmail.aba.repository;
+package com.gmail.aba.repository.impl;
 
 import com.gmail.aba.data.ColumnData;
 import com.gmail.aba.data.TaskData;
@@ -6,6 +6,7 @@ import com.gmail.aba.dto.TaskDetailsDTO;
 import com.gmail.aba.dto.TaskUpdateColumnDTO;
 import com.gmail.aba.dto.TaskUpdateDTO;
 import com.gmail.aba.dto.TaskUpdateOrderDTO;
+import com.gmail.aba.repository.TaskRepo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
@@ -20,7 +21,7 @@ import java.util.List;
 @Repository
 public class TaskRepoImpl implements TaskRepo {
 
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public int save(TaskData task) {
@@ -48,13 +49,13 @@ public class TaskRepoImpl implements TaskRepo {
     }
 
     @Override
-    public int updateTaskByOrder(TaskUpdateOrderDTO task, int id) {
+    public int updateTaskOrder(TaskUpdateOrderDTO task, int id) {
         return jdbcTemplate.update("UPDATE task SET task_order = ? WHERE task_id = ?",
                 new Object[] {task.getTaskOrder(), id});
     }
 
     @Override
-    public int updateTaskByColumn(TaskUpdateColumnDTO task, int id) {
+    public int updateTaskColumn(TaskUpdateColumnDTO task, int id) {
         return jdbcTemplate.update("UPDATE task SET fk_task = ? WHERE task_id = ?",
                 new Object[] {task.getFkTask(), id});
     }
