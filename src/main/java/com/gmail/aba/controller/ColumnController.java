@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -19,9 +20,13 @@ public class ColumnController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public ColumnData create(@RequestBody ColumnData columnData) {
-        columnService.createColumn(columnData);
-        return columnService.getLastRow();
+    public Optional<ColumnData> create(@RequestBody ColumnData column) {
+        Optional<ColumnData> columnData = null;
+        if (column.getColumnName() != null && column.getColumnOrder() != null) {
+            columnService.createColumn(column);
+            columnData = Optional.ofNullable(columnService.getLastRow());
+        }
+        return columnData;
     }
 
     @GetMapping("/{id}")

@@ -1,11 +1,9 @@
 package com.gmail.aba.service;
 
 import com.gmail.aba.data.ColumnData;
-import com.gmail.aba.data.TaskData;
 import com.gmail.aba.dto.ColumnDetailsDTO;
 import com.gmail.aba.repository.ColumnRepoImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,11 +13,8 @@ import java.util.List;
 public class ColumnService {
     ColumnRepoImpl columnRepo;
 
-    public boolean createColumn(ColumnData columnData) {
-        if (columnData.getColumnName() != null && columnData.getColumnOrder() != null) {
-            columnRepo.save(columnData);
-        }
-        return true;
+    public void createColumn(ColumnData columnData) {
+        columnRepo.save(columnData);
     }
 
     public ColumnDetailsDTO getColumnById(int id) {

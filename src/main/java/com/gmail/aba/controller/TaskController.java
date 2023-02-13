@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -20,9 +21,14 @@ public class TaskController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public TaskData create(@RequestBody TaskData task) {
-        taskService.createTask(task);
-        return taskService.getLastRow();
+    public Optional<TaskData> create(@RequestBody TaskData task) {
+         Optional<TaskData> taskData = null;
+
+         if (task.getTaskName() != null && task.getTaskDescription() != null && task.getTaskOrder() != null && task.getFkTask() != null) {
+            taskService.createTask(task);
+            taskData = Optional.ofNullable(taskService.getLastRow());
+        }
+        return taskData;
     }
 
     @GetMapping("/{id}")
@@ -63,7 +69,4 @@ public class TaskController {
         return sortedList;
 
     }
-
-
-
 }

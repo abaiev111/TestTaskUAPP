@@ -22,6 +22,4 @@ public class TestDataBean {
     public void destroy() {
         boardService.deleteById(1);
     }
-
-
 }

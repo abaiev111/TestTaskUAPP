@@ -1,7 +1,6 @@
 package com.gmail.aba.repository;
 
 import com.gmail.aba.data.ColumnData;
-import com.gmail.aba.data.TaskData;
 import com.gmail.aba.dto.ColumnDetailsDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
