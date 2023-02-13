@@ -21,7 +21,7 @@ public class ColumnController {
     @ResponseStatus(HttpStatus.CREATED)
     public ColumnData create(@RequestBody ColumnData columnData) {
         columnService.createColumn(columnData);
-        return columnData;
+        return columnService.getLastRow();
     }
 
     @GetMapping("/{id}")

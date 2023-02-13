@@ -25,3 +25,56 @@ CREATE TABLE task (
             task_order INT DEFAULT NULL,
             fk_task INT REFERENCES column1(column_Id) ON DELETE CASCADE
 )ENGINE=INNODB;
+
+-- 1. створити колонку: POST /api/column/create
+-- {
+--     "columnName": "columnName123",
+--     "columnOrder": "1"
+-- }
+--
+-- 2.отримати колонку по id: GET /api/column/1
+--
+-- 3 оновити колонку: PUT /api/column/update/name/1
+-- {
+--     "columnName" : "columnNameUpdated4"
+-- }
+--
+-- 4 оновити чергу колонки по id: PUT /api/column/update/order/1
+-- {
+--     "columnOrder" : 1
+-- }
+--
+-- 5 видалити колонку по id DELETE /api/column/delete/1
+--
+-- 6 отримати всi колонки: GET /api/column/getAll
+--
+-- 7 створити задачу: POST /api/task/create
+-- {
+--      "taskName": "task180194",
+--     "taskDescription": "task180194 task180194 task180194",
+--     "taskOrder": 1,
+--     "fkTask": 2
+-- }
+--
+-- 8 отримати задачу по id: GET /api/task/1
+--
+-- 9 оновити задачу по id: PUT /api/task/update/1
+-- {
+--      "taskName": "taskUpdated",
+--      "taskDescription": "taskUpdated"
+-- }
+--
+-- 10 оновити чергу задачi по id: PUT /api/task/update/order/1
+-- {
+--     "taskOrder": 10
+-- }
+--
+-- 11 оновити задачу в колонцi по id: PUT /api/task/update/column/1
+--
+-- 12 видалити задачу по id: DELETE /api/task/delete/1
+--
+-- 13 отримати всi задачi: GET /api/task/getAll
+
+
+
+
