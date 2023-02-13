@@ -39,6 +39,7 @@ public class TaskController {
 
     @PutMapping("/update/{id}")
     public String updateTask(@RequestBody TaskUpdateDTO task, @PathVariable int id) {
+        task.setTaskDate(LocalDate.now());
         return taskService.updateTask(task, id);
 
     }

@@ -44,7 +44,7 @@ public class TaskRepoImpl implements TaskRepo {
     @Override
     public int updateTask(TaskUpdateDTO task, int id) {
         return jdbcTemplate.update("UPDATE task SET task_name = ?, task_description = ?, task_date = ? WHERE task_id = ?",
-                new Object[] {task.getTaskName(), task.getTaskDescription(), LocalDate.now(), id});
+                new Object[] {task.getTaskName(), task.getTaskDescription(), task.getTaskDate(), id});
     }
 
     @Override

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -12,5 +14,6 @@ import lombok.Setter;
 public class TaskUpdateDTO {
     private String taskName;
     private String taskDescription;
+    private LocalDate taskDate;
 
 }
