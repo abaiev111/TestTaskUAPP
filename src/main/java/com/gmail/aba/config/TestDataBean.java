@@ -15,7 +15,7 @@ public class TestDataBean {
 
     @PostConstruct
     public void fillData() {
-        boardService.createBoard(new BoardData(1L,"myBoard1"));
+        boardService.createBoard(new BoardData(1L,"myBoard"));
     }
 
     @PreDestroy

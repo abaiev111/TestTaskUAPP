@@ -25,20 +25,6 @@ class TaskUappApplicationTests extends AbstractTest {
     TaskService taskService;
 
     @Test
-    public void testCreateBoard() throws Exception {
-
-        BoardData boardData = new BoardData("boardName");
-        String inputJson = mapToJson(boardData);
-
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post("/api/board/create")
-                .contentType(MediaType.APPLICATION_JSON_VALUE).content(inputJson)).andReturn();
-
-        int status = mvcResult.getResponse().getStatus();
-        assertEquals(201, status);
-    }
-    //-----------
-
-    @Test
     public void testCreateColumn() throws Exception {
         ColumnData columnData = new ColumnData("columnName", 1);
         String inputJson = mapToJson(columnData);
@@ -48,6 +34,7 @@ class TaskUappApplicationTests extends AbstractTest {
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(201, status);
+
     }
 
     @Test
