@@ -1,6 +1,5 @@
 package com.gmail.aba.service;
 
-import com.gmail.aba.data.ColumnData;
 import com.gmail.aba.data.TaskData;
 import com.gmail.aba.dto.TaskDetailsDTO;
 import com.gmail.aba.dto.TaskUpdateColumnDTO;
@@ -10,7 +9,7 @@ import com.gmail.aba.repository.TaskRepoImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 @AllArgsConstructor

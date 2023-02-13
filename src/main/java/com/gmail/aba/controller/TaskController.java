@@ -1,6 +1,5 @@
 package com.gmail.aba.controller;
 
-import com.gmail.aba.data.ColumnData;
 import com.gmail.aba.data.TaskData;
 import com.gmail.aba.dto.*;
 import com.gmail.aba.service.TaskService;

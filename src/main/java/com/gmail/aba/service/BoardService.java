@@ -14,4 +14,9 @@ public class BoardService {
     public int createBoard(BoardData boardData) {
         return boardRepo.save(boardData);
     }
+
+    public int deleteById(int id) {
+        return boardRepo.deleteById(id);
+    }
+
 }

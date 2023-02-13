@@ -14,7 +14,13 @@ public class BoardRepoImpl implements BoardRepo{
 
     @Override
     public int save(BoardData boardData) {
-        return jdbcTemplate.update("INSERT INTO board (board_name) VALUES (?)",
-                new Object[] {boardData.getBoardName()});
+        return jdbcTemplate.update("INSERT INTO board (board_id, board_name) VALUES (?,?)",
+                new Object[] {boardData.getId(), boardData.getBoardName()});
     }
+
+    @Override
+    public int deleteById(int id) {
+        return jdbcTemplate.update("DELETE FROM board WHERE board_id = ?", id);
+    }
+
 }

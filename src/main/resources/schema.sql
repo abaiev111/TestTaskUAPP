@@ -4,7 +4,7 @@ USE mydb;
 
 DROP TABLE IF EXISTS board;
 CREATE TABLE board (
-            board_Id INT AUTO_INCREMENT PRIMARY KEY,
+            board_Id INT PRIMARY KEY,
             board_name VARCHAR(255) DEFAULT NULL
 )ENGINE=INNODB;
 
