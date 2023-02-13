@@ -41,7 +41,7 @@ CREATE TABLE task (
 --
 -- 4 оновити чергу колонки по id: PUT /api/column/update/order/1
 -- {
---     "columnOrder" : 1
+--     "columnOrder" : 2
 -- }
 --
 -- 5 видалити колонку по id DELETE /api/column/delete/1
@@ -53,7 +53,7 @@ CREATE TABLE task (
 --      "taskName": "task180194",
 --     "taskDescription": "task180194 task180194 task180194",
 --     "taskOrder": 1,
---     "fkTask": 2
+--     "fkTask": 1
 -- }
 --
 -- 8 отримати задачу по id: GET /api/task/1
@@ -66,7 +66,7 @@ CREATE TABLE task (
 --
 -- 10 оновити чергу задачi по id: PUT /api/task/update/order/1
 -- {
---     "taskOrder": 10
+--     "taskOrder": 2
 -- }
 --
 -- 11 оновити задачу в колонцi по id: PUT /api/task/update/column/1

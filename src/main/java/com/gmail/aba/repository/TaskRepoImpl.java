@@ -70,6 +70,7 @@ public class TaskRepoImpl implements TaskRepo {
                 BeanPropertyRowMapper.newInstance(TaskDetailsDTO.class));
     }
 
+    @Override
     public TaskData getLastRow() {
         return jdbcTemplate.queryForObject("select * from task ORDER BY task_Id DESC LIMIT 1", BeanPropertyRowMapper.newInstance(TaskData.class) );
     }

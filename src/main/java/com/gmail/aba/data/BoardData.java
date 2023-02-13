@@ -12,6 +12,8 @@ import lombok.Setter;
 public class BoardData {
 
     private Long id;
+
     private String boardName;
+
 
 }

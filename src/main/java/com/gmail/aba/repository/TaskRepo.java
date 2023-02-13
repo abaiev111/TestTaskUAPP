@@ -17,4 +17,6 @@ public interface TaskRepo {
 
     List<TaskDetailsDTO> findAll();
 
+    public TaskData getLastRow();
+
 }

@@ -58,6 +58,7 @@ public class ColumnRepoImpl implements ColumnRepo {
                 BeanPropertyRowMapper.newInstance(ColumnDetailsDTO.class));
     }
 
+    @Override
     public ColumnData getLastRow() {
         return jdbcTemplate.queryForObject("select * from column1 ORDER BY column_Id DESC LIMIT 1", BeanPropertyRowMapper.newInstance(ColumnData.class) );
     }

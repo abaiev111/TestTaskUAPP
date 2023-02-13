@@ -11,4 +11,6 @@ public interface ColumnRepo {
     int updateColumnByOrder(ColumnData column, int id);
     int deleteColumnById(int id);
     List<ColumnDetailsDTO> findAll();
+
+    public ColumnData getLastRow();
 }
