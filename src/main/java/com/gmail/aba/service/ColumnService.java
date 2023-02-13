@@ -28,7 +28,7 @@ public class ColumnService {
 
     public String updateColumnByOrder(ColumnData column, int id) {
         columnRepo.updateColumnByOrder(column, id);
-        return "Column updated";
+        return "Column order updated";
     }
 
     public int deleteColumnById(int id) {
@@ -42,7 +42,4 @@ public class ColumnService {
     public ColumnData getLastRow() {
         return columnRepo.getLastRow();
     }
-
-
-
 }

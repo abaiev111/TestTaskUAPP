@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -23,10 +24,10 @@ public class TaskController {
     @ResponseStatus(HttpStatus.CREATED)
     public Optional<TaskData> create(@RequestBody TaskData task) {
          Optional<TaskData> taskData = null;
-
          if (task.getTaskName() != null && task.getTaskDescription() != null && task.getTaskOrder() != null && task.getFkTask() != null) {
-            taskService.createTask(task);
-            taskData = Optional.ofNullable(taskService.getLastRow());
+             task.setTaskDate(LocalDate.now());
+             taskService.createTask(task);
+             taskData = Optional.ofNullable(taskService.getLastRow());
         }
         return taskData;
     }

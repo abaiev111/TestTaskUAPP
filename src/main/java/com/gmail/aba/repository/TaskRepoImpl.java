@@ -25,7 +25,7 @@ public class TaskRepoImpl implements TaskRepo {
     @Override
     public int save(TaskData task) {
         return jdbcTemplate.update("INSERT INTO task (task_name, task_description, task_date, task_order, fk_task) VALUES (?, ?, ?, ?, ?)",
-                new Object[] {task.getTaskName(), task.getTaskDescription(), LocalDate.now(), task.getTaskOrder(), task.getFkTask() }); //LocalDate.now()
+                new Object[] {task.getTaskName(), task.getTaskDescription(), task.getTaskDate(), task.getTaskOrder(), task.getFkTask() }); //LocalDate.now()
     }
 
     @Override

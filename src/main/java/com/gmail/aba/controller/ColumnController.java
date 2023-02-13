@@ -23,6 +23,7 @@ public class ColumnController {
     public Optional<ColumnData> create(@RequestBody ColumnData column) {
         Optional<ColumnData> columnData = null;
         if (column.getColumnName() != null && column.getColumnOrder() != null) {
+            column.setFkColumn(1);
             columnService.createColumn(column);
             columnData = Optional.ofNullable(columnService.getLastRow());
         }

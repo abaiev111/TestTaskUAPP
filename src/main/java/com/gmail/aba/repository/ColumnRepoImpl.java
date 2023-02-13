@@ -19,7 +19,7 @@ public class ColumnRepoImpl implements ColumnRepo {
     @Override
     public int save(ColumnData column) {
         return jdbcTemplate.update("INSERT INTO column1 (column_name, column_order, fk_column) VALUES (?, ?, ?)",
-                new Object[] {column.getColumnName(), column.getColumnOrder(), 1});
+                new Object[] {column.getColumnName(), column.getColumnOrder(), column.getFkColumn()});
     }
 
     @Override
